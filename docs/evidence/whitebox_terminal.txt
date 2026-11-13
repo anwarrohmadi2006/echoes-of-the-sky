@@ -1,0 +1,60 @@
+TAP version 13
+# Subtest: WB-01 | evaluasiDialogJerman P1: input string kosong ditolak (INVALID_EMPTY)
+ok 1 - WB-01 | evaluasiDialogJerman P1: input string kosong ditolak (INVALID_EMPTY)
+  ---
+  duration_ms: 2.2934
+  ...
+# Subtest: WB-02 | evaluasiDialogJerman P2: input lebih dari 80 karakter ditolak (INVALID_LENGTH)
+ok 2 - WB-02 | evaluasiDialogJerman P2: input lebih dari 80 karakter ditolak (INVALID_LENGTH)
+  ---
+  duration_ms: 0.3232
+  ...
+# Subtest: WB-03 | evaluasiDialogJerman P3: kata kunci cocok + sudah baca kamus (PASS_FLUENT)
+ok 3 - WB-03 | evaluasiDialogJerman P3: kata kunci cocok + sudah baca kamus (PASS_FLUENT)
+  ---
+  duration_ms: 0.2989
+  ...
+# Subtest: WB-04 | evaluasiDialogJerman P4: kata kunci cocok tanpa baca kamus (PASS_BASIC)
+ok 4 - WB-04 | evaluasiDialogJerman P4: kata kunci cocok tanpa baca kamus (PASS_BASIC)
+  ---
+  duration_ms: 0.5878
+  ...
+# Subtest: WB-05 | evaluasiDialogJerman P5: kalimat tidak mengandung kosakata Jerman (FAIL_MISUNDERSTOOD)
+ok 5 - WB-05 | evaluasiDialogJerman P5: kalimat tidak mengandung kosakata Jerman (FAIL_MISUNDERSTOOD)
+  ---
+  duration_ms: 0.3745
+  ...
+# Subtest: WB-06 | cekKelayakanKeRWTH P1: belum memeriksa objek kamar sama sekali (LOCKED_NO_EXPLORE)
+ok 6 - WB-06 | cekKelayakanKeRWTH P1: belum memeriksa objek kamar sama sekali (LOCKED_NO_EXPLORE)
+  ---
+  duration_ms: 0.346
+  ...
+# Subtest: WB-07 | cekKelayakanKeRWTH P2: hanya periksa meja belajar tanpa jendela kamar (LOCKED_INCOMPLETE_ROOM)
+ok 7 - WB-07 | cekKelayakanKeRWTH P2: hanya periksa meja belajar tanpa jendela kamar (LOCKED_INCOMPLETE_ROOM)
+  ---
+  duration_ms: 1.562
+  ...
+# Subtest: WB-08 | cekKelayakanKeRWTH P3: kamar sudah diperiksa tetapi belum uji bahasa Jerman (LOCKED_NEED_FRAU_DIALOG)
+ok 8 - WB-08 | cekKelayakanKeRWTH P3: kamar sudah diperiksa tetapi belum uji bahasa Jerman (LOCKED_NEED_FRAU_DIALOG)
+  ---
+  duration_ms: 0.2838
+  ...
+# Subtest: WB-09 | cekKelayakanKeRWTH P4: seluruh syarat kamar dan dialog lulus (READY_RWTH)
+ok 9 - WB-09 | cekKelayakanKeRWTH P4: seluruh syarat kamar dan dialog lulus (READY_RWTH)
+  ---
+  duration_ms: 0.7701
+  ...
+# Subtest: WB-10 | tanganiInsidenBangkok: teriakan panik Vuur dan humor penyelamat aktif
+ok 10 - WB-10 | tanganiInsidenBangkok: teriakan panik Vuur dan humor penyelamat aktif
+  ---
+  duration_ms: 0.9877
+  ...
+1..10
+# tests 10
+# suites 0
+# pass 10
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 171.4915

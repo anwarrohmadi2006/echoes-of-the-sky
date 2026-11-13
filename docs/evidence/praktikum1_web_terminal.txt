@@ -1,0 +1,12 @@
+Testing URL: https://www.saucedemo.com/
+=== PRAKTIKUM 1 BLACK BOX WEB (SAUCEDEMO) ===
+P1-BB-01 | Invalid | Login input kosong                   | PASS | Epic sadface: Username is required
+P1-BB-02 | Invalid | Login password kosong                | PASS | Epic sadface: Password is required
+P1-BB-03 | Invalid | Login akun terkunci (locked_out_user) | PASS | Epic sadface: Sorry, this user has been locked out.
+P1-BB-04 | Invalid | Login kredensial salah               | PASS | Epic sadface: Username and password do not match any user in this service
+P1-BB-05 | Valid   | Login kredensial valid               | PASS | URL=https://www.saucedemo.com/inventory.html (6 produk tampil)
+P1-BB-06 | Valid   | Sortir katalog (Price low to high)   | PASS | Produk #1: Sauce Labs Onesie ($7.99)
+P1-BB-07 | Valid   | Tambah 2 produk & cek Cart           | PASS | Badge=2, isi cart=2 item
+P1-BB-08 | Valid   | Hapus 1 item dari keranjang          | PASS | Sisa badge=1, item=1
+P1-BB-09 | Invalid | Checkout form data diri kosong       | PASS | Error: First Name is required
+P1-BB-10 | Valid   | Checkout lengkap hingga Finish       | PASS | URL=https://www.saucedemo.com/checkout-complete.html | 'Thank you for your order!'

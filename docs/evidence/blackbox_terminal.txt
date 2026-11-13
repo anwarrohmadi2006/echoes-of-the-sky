@@ -1,0 +1,14 @@
+Testing URL: https://echoes-of-the-sky.pages.dev
+
+=== BLACK BOX E2E SUMMARY ===
+BB-01 | Halaman Pembuka & Epigraf                      | PASS | Kutipan tampil (170 karakter)
+BB-02 | Adegan 1 Kemayoran & Kalung Emas               | PASS | Rudy menggenggam kalung emas pemberian Mami—bukan untuk kemewahan, m
+BB-03 | Cutscene Percikan Api Bangkok                  | PASS | Percikan api memutar di motor baling-baling sayap kanan! Pilih reaks
+BB-04 | Transisi Batas Akhir Prolog -> Free Roam       | PASS | Hotspot kamar aktif lengkap
+BB-05 | Validasi Akses RWTH Sebelum Syarat Terpenuhi   | PASS | Periksa dulu kamar indekosmu (Meja Belajar dan Jendela Kamar) sebelu
+BB-06 | Eksplorasi Meja Belajar, Warsaw LP & Jendela   | PASS | 4/4 objek kamar tercatat selesai
+BB-07 | Validasi Input Bahasa Jerman Kosong            | PASS | [INVALID_EMPTY | Skor: 0] Rudy masih terdiam. Masukkan atau pilih ka
+BB-08 | Validasi Batas Karakter Input (> 80 huruf)     | PASS | [INVALID_LENGTH | Skor: 0] Kalimat terlalu panjang untuk sapaan loro
+BB-09 | Validasi Kalimat Non-Jerman                    | PASS | [FAIL_MISUNDERSTOOD | Skor: 25] Frau Neuefeiend tampak bingung. Peri
+BB-10 | Uji Bahasa Jerman Fasih & Menuju RWTH Aachen   | PASS | [PASS_FLUENT | Skor: 100] Frau Neuefeiend tersenyum hangat mendengar
+Console errors: 0 | Page errors: 0 | Failed requests: 0 | Mobile overflow: False

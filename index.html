@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ECHOES of the Sky — Prolog: Penerbangan Yang Pertama</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="app" class="app-shell">
+    <!-- Layar Pembuka / Epigraf Leonardo Da Vinci -->
+    <section id="screen-epigraph" class="screen-epigraph is-active" aria-label="Epigraf Pembuka">
+      <div class="paper-card epigraph-card">
+        <p class="epigraph-meta">ECHOES OF THE SKY • APRIL 1955</p>
+        <blockquote class="epigraph-quote">
+          “Begitu kamu mencicipi rasanya terbang, kamu akan selalu berjalan dengan mata menatap ke langit, karena kamu pernah ke sana, dan kerinduanmu akan selalu tertuju padanya.”
+        </blockquote>
+        <p class="epigraph-author">— Leonardo Da Vinci</p>
+        <h1 class="epigraph-title">PROLOG: PENERBANGAN YANG PERTAMA</h1>
+        <p class="epigraph-sub">
+          Bandara Kemayoran menuju Aachen, Jerman Barat • Pengantar kisah B.J. Habibie (Rudy)
+        </p>
+        <div class="epigraph-actions">
+          <button type="button" id="btn-start-prolog" class="btn-primary">Mulai Prolog</button>
+          <button type="button" id="btn-resume-session" class="btn-secondary is-hidden">Lanjutkan Sesi Tersimpan</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Layar Utama Game -->
+    <main id="screen-game" class="screen-game is-hidden" aria-label="Panggung Permainan">
+      <header class="hud-bar">
+        <div class="hud-identity">
+          <span id="hud-chapter" class="hud-chapter">Adegan 1</span>
+          <span id="hud-location" class="hud-location">Bandara Kemayoran, Jakarta</span>
+        </div>
+        <div id="hud-route" class="hud-route" aria-label="Rute Perjalanan"></div>
+        <div class="hud-controls">
+          <div class="hud-stats" aria-label="Kondisi Rudy">
+            <span class="stat-pill">Ketenangan: <strong id="stat-calm">75</strong>%</span>
+            <span class="stat-pill">Fokus: <strong id="stat-focus">65</strong>%</span>
+          </div>
+          <button type="button" id="btn-open-inventory" class="icon-btn" title="Tas & Catatan Rudy" aria-label="Buka Tas dan Catatan"></button>
+          <button type="button" id="btn-toggle-audio" class="icon-btn" title="Suara Latar" aria-label="Hidupkan atau Matikan Suara"></button>
+          <button type="button" id="btn-reset-game" class="icon-btn" title="Ulangi dari Awal" aria-label="Ulangi Permainan"></button>
+        </div>
+      </header>
+
+      <div class="game-workspace">
+        <section class="stage-column">
+          <div id="stage-canvas" class="stage-canvas"></div>
+
+          <!-- Panel Narasi & Pilihan -->
+          <section class="narrative-panel" aria-live="polite">
+            <div class="narrative-head">
+              <span id="narrative-speaker" class="speaker-tag">Narator</span>
+              <span id="hotspot-feedback" class="hotspot-feedback"></span>
+            </div>
+            <p id="narrative-text" class="narrative-text"></p>
+            <div id="choices-container" class="choices-container"></div>
+          </section>
+        </section>
+
+        <!-- Sidebar Tutorial / Free Roam & Informasi -->
+        <aside id="sidebar-panel" class="sidebar-panel">
+          <div class="sidebar-block">
+            <h2 class="sidebar-title">Tujuan & Panduan</h2>
+            <p id="sidebar-mode-note" class="sidebar-note">
+              Ikuti kisah prolog hingga tiba di kamar indekos Frankenberg Str. 16, Aachen.
+            </p>
+            <ul id="quest-checklist" class="quest-checklist">
+              <li data-quest="physics_books">Periksa Meja Belajar: Buku Fisika</li>
+              <li data-quest="german_dict">Pelajari Kamus Bahasa Jerman</li>
+              <li data-quest="warsaw_lp">Putar Piringan Hitam Warsaw Concerto</li>
+              <li data-quest="window">Lihat Pemandangan Jendela Aachen (Pasca-PD II)</li>
+              <li data-quest="door">Uji Bahasa Jerman dgn Ibu Neuefeiend &amp; Ke RWTH</li>
+            </ul>
+          </div>
+
+          <div id="freeroam-quickbar" class="sidebar-block is-hidden">
+            <h2 class="sidebar-title">Akses Cepat Ruangan</h2>
+            <div class="quick-actions">
+              <button type="button" class="btn-outline" data-quick-hotspot="desk">Meja Belajar</button>
+              <button type="button" class="btn-outline" data-quick-hotspot="window">Jendela Kamar</button>
+              <button type="button" class="btn-outline" data-quick-hotspot="bag">Wastafel &amp; Tas Kulit</button>
+              <button type="button" class="btn-outline is-accent" data-quick-hotspot="door">Pintu Lorong / Ibu Indekos</button>
+            </div>
+          </div>
+
+          <div class="sidebar-block">
+            <h2 class="sidebar-title">Catatan Perjalanan</h2>
+            <ul id="journal-list" class="journal-list"></ul>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <!-- Modal / Overlay Interaktif (Benda Kamar, Kamus, Uji Ibu Neuefeiend, Inventori) -->
+    <div id="modal-backdrop" class="modal-backdrop is-hidden" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <div class="modal-sheet paper-card">
+        <div class="modal-header">
+          <h3 id="modal-title" class="modal-title">Judul Panel</h3>
+          <button type="button" id="btn-close-modal" class="btn-close" aria-label="Tutup Panel">Tutup</button>
+        </div>
+        <div id="modal-body" class="modal-body"></div>
+      </div>
+    </div>
+  </div>
+
+  <script defer src="src/core/storyData.js"></script>
+  <script defer src="src/core/stateEngine.js"></script>
+  <script defer src="src/core/dialogValidator.js"></script>
+  <script defer src="src/core/freeRoamRules.js"></script>
+  <script defer src="src/audio/soundscape.js"></script>
+  <script defer src="src/ui/sceneIllustrations.js"></script>
+  <script defer src="src/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+dist/
+__pycache__/
+*.pyc
+Materi_Praktikum_Pengujian_Perangkat_Lunak.pptx
+.DS_Store
+~$*
+
+# Generated report files & Word documents (kept local only)
+*.docx
+docs/Laporan_*
+scripts/build_report_docx.py

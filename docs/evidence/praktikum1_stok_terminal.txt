@@ -1,0 +1,5 @@
+stok= -5 | expected=Input salah  | actual=Input salah  | PASS
+stok= -1 | expected=Input salah  | actual=Input salah  | PASS
+stok=  0 | expected=Habis        | actual=Habis        | PASS
+stok=  1 | expected=Tersedia     | actual=Tersedia     | PASS
+stok= 25 | expected=Tersedia     | actual=Tersedia     | PASS
